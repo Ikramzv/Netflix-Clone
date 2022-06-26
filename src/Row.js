@@ -30,17 +30,22 @@ function Row({title , fetchUrl , isLargeRow}) {
         if(trailerUrl) {
             setTrailerUrl('')
         }else {
-            movieTrailer(movie?.name || movie?.title || "").then((url) => {
+            movieTrailer(movie?.name || movie?.title || movie?.original_title || '').then((url) => {
                 console.log(url)
                 const urlParams = new URLSearchParams(new URL(url).search)
                 setTrailerUrl(urlParams.get('v'))
-            }).catch((err) => console.log(err))
+            }).catch((err) => {
+                if(err) {
+                    return alert(`${movie?.name || movie?.title || movie?.original_title || ''}'s trailer wasn't found on Youtube `)
+                }    
+            })
         }
     }
 
     const opts = {
         height: '390',
         width: '100%',
+        host: 'https://www.youtube.com' ,
         playerVars: {
             autoplay: 1
         }
