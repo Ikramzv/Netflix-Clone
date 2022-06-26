@@ -67,3 +67,31 @@ h4 {
     background: linear-gradient(transparent , rgba(37,37,37,0.61) , #111);
 }
 
+.close_btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    font-weight: 500;
+    color: transparent;
+    letter-spacing: 50px;
+    height: 50px;
+    background-color: black;
+    box-shadow: -10px -15px 10px -8px black;
+    border-radius: 20px;
+    transition: 500ms ease background-color;
+    cursor: pointer;
+    animation: closeBtn ease 1s forwards;
+}
+
+.close_btn:hover {
+    background-color: crimson;
+}
+
+@keyframes closeBtn {
+    to {
+        width: 100%;
+        color: white;
+        letter-spacing: normal;
+    }
+}
