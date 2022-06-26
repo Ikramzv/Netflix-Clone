@@ -1,3 +1,7 @@
+# App hosting url
+
+https://netflix-clone-89d94.web.app/
+
 # Tools and libraries used in this app
 
 I have used React , firebase for hosting , react-youtube , movie-trailer , axios for fetching data, tmdb api which is movie database , to build this app.
